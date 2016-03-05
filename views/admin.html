@@ -1,0 +1,110 @@
+<% include header.html %>
+
+<header id="header">
+	<section id="headertop1">
+		<div id="topleft">
+				
+		</div>
+		<div id="headertitle">
+		<h2>学生信息管理系统</h2>
+		</div>
+	</section>
+	
+	<section id="headertop2">
+		<div id="top2left">
+			<nav>			
+				
+			</nav>
+		</div>
+		<div id="top2img">
+			<a href="#"><img src="/images/sy_bg.jpg" /></a>
+			<a href="#"><img src="/images/xg_bg.jpg" /></a>
+			<a href="#"><img src="/images/tc_bg.jpg" /></a>
+		</div>
+	</section>
+</header>
+<section id="maincontents">
+	<div id="asideleft">
+	</div>
+	<aside>		
+		<div id="aside">
+		<nav>
+			<h4><img id="inin" src="/images/company.png">&nbsp;菜单导航</h4>
+			<ul>				
+				<li id="usergroup"><h5>用户管理</h5>
+					<ul>
+					<a href="/user/class1"><li title="class1" value="user">一年级</li></a>
+					<a href="/user/class2"><li title="class2" value="user">二年级</li></a>
+					<a href="/user/class3"><li title="class3" value="user">三年级</li></a>
+					<a href="/user/class4"><li title="class4" value="user">四年级</li></a>
+					</ul>
+				</li>
+				<li id="scoregroup"><h5>成绩管理</h5>
+					<ul>
+					<a href="/score/class1"><li title="class1" value="score">一年级</li></a>
+					<a href="/score/class2"><li title="class2" value="score">二年级</li></a>
+					<a href="/score/class3"><li title="class3" value="score">三年级</li></a>
+					<a href="/score/class4"><li title="class4" value="score">四年级</li></a>
+					</ul>
+				</li>
+				<li id="jdugegroup"><h5>评论管理</h5>
+					<ul>
+					<a href="/jduge/class1"><li title="class1" value="jdgue">一年级</li></a>
+					<a href="/jduge/class2"><li title="class2" value="jdgue">二年级</li></a>
+					<a href="/jduge/class3"><li title="class3" value="jdgue">三年级</li></a>
+					<a href="/jduge/class4"><li title="class4" value="jdgue">四年级</li></a>
+					</ul>
+				</li>					
+			</ul>
+		</nav>
+		</div>
+	</aside>
+	<section id="content">	
+		<div id="nav_bars">
+		<div id="message" class="alert alert-danger"></div>
+			<li class="navbar_prev">&lt;</li>
+			<li>
+			<ul id="navbar">
+				<li style="width:80px;">首 页<a href="#"><img src="/images/del.gif" /></a></li>
+			</ul>
+			</li>
+			<li class="navbar_next">&gt;</li>				
+		</div>
+		
+		<div id="formshow">
+		<% include firstpage.html %>
+		<% include user_form.html %>
+		<% include score_form.html %>
+		<% include jdgue_form.html %>
+		
+		</div>
+		<div id="gridshow">	
+		<% include usergrid.html %>
+		<% include scoregrid.html %>
+		<% include jdguegrid.html %>
+		
+		</div>
+		
+		<div id="pager">
+			<ul class="pager">
+			  <li id="page_prev" class="previous"><a href="#">上一页</a></li>
+			  <li>第<i id="page_num" style="color:red;margin: 0 10px;">1</i>页</li>
+			  <li id="page_next" class="next"><a href="#">下一页</a></li>
+			</ul>
+		</div>
+		<div>
+			<ul id="pagination" class="pagination pagination-md">
+			 
+			</ul>
+		</div>
+	</section>
+	
+	<div id="asideright">
+	</div>
+</section>
+
+<footer>
+</footer>
+
+
+<% include footer.html %>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!--网页三要素-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>test</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name='Keywords' content='node、js' />
+	<meta name='description' content='' />
+	<meta name="viewport" content='width=device-width,initial-scale=1.0' />
+    <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+	<script type="text/javascript" src="/javascripts/jquery-1.11.min.js"></script>
+	<link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+		<script type="text/javascript">
+		
+			$(function(){
+				$("#upbtn").click(function(){
+					//alert($("#filey").val())
+					//alert($("#files").length)
+				});
+			});
+			//此处用jquery怎么用
+		
+		function show(){
+			var files = document.getElementById("files");
+			var shows = document.getElementById("showpic");
+			//检测浏览器是否支持FileReader接口
+			if(typeof FileReader == "undefined"){
+				shows.innerHTML = "your broswer don't support this";
+				files.setAttribute("disabled","disabled");
+			}else{
+				var reader = new FileReader();
+			}
+			//检测是否为图像文件或设置accept="images/*"
+			var filelen = files.files.length;
+			//alert(filelen.length)
+			for(var i=0;i<filelen;i++){
+				var file = files.files[i];
+				if(!/image\/\w+/.test(file.type)){
+					alert("select img file")
+					return false;
+				}
+				//sed(file);
+				//alert(0)//加次可显示多图，表明后者覆盖前者
+				reader.readAsDataURL(file);
+				reader.onload = function(e){//循环不能同时显示??????
+					//var result = files;
+					//shows.innerHTML += '<img src="'+this.result+'">';
+					//or
+					//var im= document.createElement("img")
+					//shows.appendChild(im);
+					//im.setAttribute("src",e.target.result);
+										
+					shows.innerHTML += '<img src="'+e.target.result+'">';
+					//$("#showpic").append('<img src="'+e.target.result+'">');
+				}
+				
+			}
+			
+			/*
+			function sed(file){
+				reader.readAsDataURL(file);
+				reader.onload = function(e){//循环不能同时显示??????
+					//var result = files;
+					//shows.innerHTML += '<img src="'+this.result+'">';
+					//or
+					shows.innerHTML += '<img src="'+e.target.result+'">';
+				}
+			}
+			*/
+		} 
+		function show1(){
+			var files = document.getElementById("files");
+			var shows = document.getElementById("showpic");
+			//检测浏览器是否支持FileReader接口
+			if(typeof FileReader == "undefined"){
+				shows.innerHTML = "your broswer don't support this";
+				files.setAttribute("disabled","disabled");
+			}else{
+				var reader = new FileReader();
+			}
+			//检测是否为图像文件或设置accept="images/*"
+			var filelen = files.files.length;
+			//alert(filelen.length)
+			for(var i=0;i<filelen;i++){
+				var file = files.files[i];
+				if(!/image\/\w+/.test(file.type)){
+					alert("select img file")
+					return false;
+				}
+				//alert(file.name)
+				reader.readAsBinaryString(file);
+				
+				reader.onload = function(e){//显示不了????
+					//var result = files;
+					//shows.innerHTML += '<img src="'+this.result+'">';
+					//以这种形式获取
+					//shows.innerHTML += this.result;
+
+					//不能用
+					//shows.innerHTML += '<img src="'+e.target.result+'">';
+					//or
+					shows.innerHTML += e.target.result;
+
+				}
+				//alert(file.name)
+				
+			}
+		}
+		function show2(){
+			var files = document.getElementById("files");
+			var shows = document.getElementById("showpic");
+			//检测浏览器是否支持FileReader接口
+			if(typeof FileReader == "undefined"){
+				shows.innerHTML = "your broswer don't support this";
+				files.setAttribute("disabled","disabled");
+			}else{
+				var reader = new FileReader();
+			}
+			//检测是否为图像文件或设置accept="images/*"
+			var filelen = files.files.length;
+			//alert(filelen.length)
+			for(var i=0;i<filelen;i++){
+				var file = files.files[i];
+				//alert(file.name)
+				reader.readAsText(file, "gb2312");
+				
+				reader.onload = function(e){//显示
+					//var result = files;
+					//shows.innerHTML += '<img src="'+this.result+'">';
+					//以这种形式获取
+					//shows.innerHTML += this.result;
+
+					//不能用
+					//shows.innerHTML += '<img src="'+e.target.result+'">';
+					//or
+					shows.innerHTML += e.target.result;
+
+				}
+				//怎样转换二进制存储的图片
+				
+			}
+		}
+		
+		//表单，验证，存储，localStorage,sessionStorage
+		$(function(){
+			$("#real a").click(function(){
+				var $urll = $(this).attr("href");
+				//alert($urll)
+				return false;
+			});
+			$("button").click(function(){
+				return false;
+			});
+		
+		});
+		
+		
+		
+		</script>
+		<style type="text/css">
+			div#upfiles {
+				margin: 50px 50px;
+			}
+			div#showpic img {
+				margin-left: 100px;
+			}
+			div#real {
+				width: 20px;
+				height: 20px;
+				background-color: skyblue;
+			}
+		</style>
+		
+  <body>
+	<div id="upfiles">
+		<!--<input type="file" id="files" multiple size="50" accept="image/*" />-->
+		<input type="file" id="files" multiple size="50" />
+		<div id="sendfiles">
+			<label for="upbtn">readAsDataURL:</label>
+			<input type="button" onclick="return show();" id="upbtn" value="上传文件" />
+			&gt;&gt;&gt;&gt;
+			<label for="binary">readAsBinaryString:</label>
+			<input type="button" onclick="return show1();" id="binary" value="上传文件" />
+			&gt;&gt;&gt;&gt;
+			<label for="Text">readAsText:</label>
+			<input type="button" onclick="return show2();" id="Text" value="上传文件" />
+		</div>
+	</div>
+	<div id="showpic">
+	</div>
+	<form method="get" action="/">
+	<div id="real">
+		<a href="/"><li>dd</li></a>
+	</div>
+	<button type="submit">submit</button>
+	</form>
+
+
+	
+  <script type="text/javascript" src="/javascripts/jquery-1.11.min.js"></script>
+  <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+  </body>
+</html>

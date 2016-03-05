@@ -1,0 +1,117 @@
+
+<% include header.html %>
+
+<div class="container" id='indexPage'>
+	<div class="row" id="navtips">
+		<div class="navbar navbar-default ">
+		<p class="col-xs-9 col-sm-4 col-md-3 col-lg-3 col-xs-push-2 col-sm-push-3 col-md-push-3 col-lg-push-2">
+			<strong>学生信息系统</strong>
+		</p>
+		</div>
+	</div>
+	<div class="row">	  
+		<div id="lefcol" class="col-xs-3 col-sm-2 col-md-2 col-lg-2" >
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+				eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+				enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+				nisi ut aliquip ex ea commodo consequat. 
+			</p>
+		</div>
+		<div id ="rigcol" class="col-xs-9 col-sm-9 col-md-10 col-lg-10" >	
+			<div class="">
+			<!--reg form-->
+			<form class="form-horizontal" method="post" action="/#">
+				<fieldset>				
+					<div class="row">
+						<label class="col-xs-3 col-sm-2 col-md-2 col-lg-1" for="username">姓名</label>			  				 
+						<input type="text" required="required" id="username" name="username"
+							class="col-xs-8 col-sm-4 col-md-3 col-lg-3"/>			  			  
+					</div>			
+					<div class="row">
+						<label class="col-xs-3 col-sm-2 col-md-2 col-lg-1" for="userNum">学号</label>			  				  
+						<input type="text" pattern="[0-9]{4}" id="userNum" name="userNum" placeholder="输入四位有效数字" 
+							required="required" class="col-xs-8 col-sm-4 col-md-3 col-lg-3" />				  			  
+					</div>			
+					<div class="row">
+						<label class="col-xs-3 col-sm-2 col-md-2 col-lg-1" for="userSect">年级</label>			  				  
+						<select type="select" class="col-xs-8 col-sm-4 col-md-3 col-lg-3" id="userSect" name="userSect">
+							<option>一年级</option>
+							<option>二年级</option>
+							<option>三年级</option>
+						</select>				  			  
+					</div>			
+					<div class="row">
+						<label class="col-xs-3 col-sm-2 col-md-2 col-lg-1" for="userSex">性别</label>			  				  
+						<select type="select" class="col-xs-8 col-sm-4 col-md-3 col-lg-3" id="userSex" name="userSex">
+							<option>男</option>
+							<option>女</option>
+						</select>
+					</div>						
+					<div class="row">
+					<button type="submit" class="btn btn-xs btn-primary col-xs-2 col-sm-1 col-md-1 col-lg-1 col-xs-push-4 
+						col-sm-push-2 col-md-push-2 col-lg-push-1">提交</button>
+					<button type="reset" class="btn btn-xs btn-primary col-xs-2 col-sm-1 col-md-1 col-lg-1 col-xs-push-6
+						col-sm-push-4 col-md-push-3 col-lg-push-2">重置</button>
+					</div>			
+					</fieldset>
+				</form>
+			</div>		
+		</div>
+	  
+	    <div id ="stdcol" class="col-xs-9 col-sm-10 col-md-10 col-lg-10" >
+			<table id="stdtable" class="table">					
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>姓名</th>
+						<th>性别</th>
+						<th>学号</th>
+						<th>年级</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>名次</td>
+						<td>名次</td>
+						<td>名次</td>
+						<td>名次</td>
+						<td>名次</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>名次</td>
+						<td>名次</td>
+						<td>名次</td>
+						<td>名次</td>
+						<td>名次</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>名次</td>
+						<td>名次</td>
+						<td>名次</td>
+						<td>名次</td>
+						<td>名次</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>名次</td>
+						<td>名次</td>
+						<td>名次</td>
+						<td>名次</td>
+						<td>名次</td>
+					</tr>
+				</tbody>
+			</table>
+			<tfoot>
+				dfgdfgd
+			</tfoot>
+		</div>
+	</div>
+</div>
+
+
+
+<% include footer.html %>

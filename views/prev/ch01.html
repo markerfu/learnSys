@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<!--网页三要素-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title><%= title %></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name='Keywords' content='node、js' />
+	<meta name='description' content='' />
+	<meta name="viewport" content='width=device-width,initial-scale=1.0' />
+    <!--<link rel='stylesheet' href='/stylesheets/style.css' />-->
+	<link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+		<script type="text/javascript">
+			if(window.WebSocket){			
+				url="ws://localhost:3000/chone";
+				//w = new WebSocket("ws://localhost:3000/chone");
+				//console.log(w.protocal)
+			
+			}
+		</script>
+		<style type="text/css">
+			body {
+				background-color: #333300;
+			}
+			h2:before {
+				content: 'column';
+			}
+			h2:after {
+				content: ">";
+				color: red;
+			}
+			p.new:after {
+				content:url(images/icons/add.gif);
+			}
+			p.new:before {
+				content:"第"counter(mycounter)"张";
+				font-size:20px;
+				color:skyblue;
+			}
+			h2 {
+				text-shadow: 3px 3px 2px blue,
+							12px 12px 3px red,
+							24px 24px 4px grey;
+			}
+			div#word-break {
+				width: 25%;
+				height:200px;
+				margin: -10px 20px 20px;
+				word-break: break-all;
+				word-wrap: break-word;
+				color: red;				
+			}
+			div#word-break h3{
+				background-color: rgba(0,255,100,0.03);
+			}
+			div#word-break p {
+				margin-top: -20px;
+				padding: 10px;
+				background-color: #94d3bc;
+			}
+			div#word-break footer {
+				margin-top: -10px;
+				height: 30px;
+				background-color: rgba(0,255,100,0.3);
+			}
+			div#a, div#b {
+				display: inline-block;
+				vertical-align: top;
+				border: 5px solid red;
+				width:200px;
+				word-break: break-all;
+				
+			}
+			div#a {				
+				border-radius: 6px/38px;
+				background-color: grey;
+				
+			}
+			div#b {
+				border-radius: 20px 0;
+				box-shadow: 15px 10px 15px skyblue;
+				border: 5px solid #478d3d;
+				overflow: auto;
+				resize: both;
+				margin-left: -4px;
+				background-color: skyblue;
+			}
+			div#c {
+				border-radius: 5px;
+				box-shadow: 0 0 10px blue;
+				width: 400px;
+				background-color: yellow;
+			}
+			div#uull ul {
+				margin: 0;
+				padding: 0;
+			}
+			div#uull li {
+				width: 100px;
+				padding: 3px;
+				display: inline-block;
+				border: dashed 5px #38fa16;
+				text-align: center;
+				font-size: 18px;
+				background-color: grey;
+				border-radius: 5px;
+			}
+			div#uull li:hover {
+				box-shadow: 0 0 10px skyblue;
+			}
+			div#uull ul a {
+				border-radius: 5px;
+				display: block;
+				text-decoration: none;
+				color: #fff;
+				background-color: skyblue;
+			}
+			div#let div {
+				
+				
+			}
+			table {
+				margin-top:20px;
+				background-color: yellow;
+				-moz-border-spacing: 10px;
+				border: 15px solid #d26900;
+				box-shadow: 5px 5px 10px grey;
+			}
+			td {
+				border-radius: 25px;
+				background-color: #467ca4;
+				box-shadow: 1px 5px 15px grey;
+				padding: 20px;
+			}
+			div#bdimg {
+				position: absolute;
+				top: 20px;
+				left: 400px;
+				margin: 20px 0 0 50px;;
+				color:red;
+				border: 15px solid;
+				-moz-border-image: url(images/icons/add.gif) 18 18 18 18/13px repeat repeat;
+				border-image: url(images/imgad.jpg) 18 108 108 18/15px repeat repeat;
+				width:300px;
+				height: 50px;
+			}
+			div#table table{
+				margin-left: 30px;
+				
+			}
+			div#columns {
+				position: absolute;
+				top: 130px;
+				left: 500px;
+				
+			}
+			div#div1 {
+				-moz-column-count: 2;
+				word-break: break-all;
+				-o-word-break: keep-all;
+				-moz-column-gap: 1.5em;
+				-moz-column-rule: 2px dotted #fff;
+				width: 240px;
+				background: url(images/b.jpg);
+				background-size: 240px auto;
+				color: #00d56a;
+			}
+			div#div1 p:first-line {
+				color: #00ff00;
+				font-weight: bold;
+				font-size: 1.2em;
+			}
+			div#div2 {
+				width: 240px;
+				height: 50px;
+				color: #efef56;
+				font-weight: bold;
+				text-shadow: 4px 4px 2px #fff;
+				padding: 10px;
+				background-color: #ff00cc;
+				opacity: 0.3;
+			}
+			div#div2 {
+				opacity: 0.8;
+			}
+			div#container {
+				display: -moz-box;
+				display: -webkit-box;
+			}
+			div#left-sidebar {
+				width: 130px;
+				padding: 15px;
+				-moz-box-ordinal-group: 3;
+				background-color: #98b9d1;
+			}
+			div#right-sidebar {
+				width: 130px;
+				padding: 15px;
+				-moz-box-ordinal-group: 1;
+				background-color: #98b9d1;
+			}
+			div#contents {
+				-moz-box-flex: 1;
+				-moz-box-ordinal-group: 2;
+				padding:30px;
+				word-break: break-all;
+				background-color: #8baa20;
+			}
+			#left-sidebar, #right-sidebar, #contents {
+				
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			p#cled {
+				margin-top: -60px;
+				height: 25px;
+				width:25%;
+				color: yellow;
+				background-color: ;
+				
+			}
+			div#clc {
+				position: absolute;
+				top:20px;
+				left: 730px;
+			}
+			div#opty {
+				box-shadow: 3px 3px 5px #fff;
+				border-radius: 107px/17px;
+				-moz-box-align: center;
+				width: 200px;
+				height: 150px;
+				padding: 10px;
+				color: yellow;
+				background-color: rgba(0,255,100,0.005);
+			}
+			div#opty header{
+				text-align: center;
+			}
+			div#conts {
+				margin-top: 5%;
+				width: 100%;
+				height: 60%;
+				color: #fff;
+				text-shadow: 2px 2px 2px skyblue;
+				border-radius: 107px/17px;
+				overflow: hidden;
+				word-break: break-all;
+				background-color: #b6b6b6;
+			}
+		</style>
+  </head>
+  <body>
+  
+ 
+	<h2>biaoti</h2>
+	<p class="new">hhh</p>
+	<div id="word-break">
+		<article>
+			<header id="heads">
+				<h3>nsdfsndfsndfnsd<h3>
+			</header>
+			<p>dfgdfgdfgdffgdfgdffthfhfhfhfh
+			dsghdgdgdfgdfgdfg
+			dfgdfgdfgdfgdfg
+			dsghdgdgdfgdfgdfg
+			dfgdfgdfgdfgdfg
+			dfgdfgdfgdfgdfgf
+			dfgdfgdfgdfgdfgfdyjhgfhjgfjh</p>
+			<footer><a>hdjf@sdf</a></footer>
+		</article>
+	</div>
+	<p id="cled">
+add<a href="#"><img id="imgd" src="images/icons/add.gif" /></a>	
+</p>
+	<hr />
+	<div id="a">AAAAAAAAAAAAAAAAAAAAAAAAAA
+	AAAAAAAAAaaaAAAAAAAAA
+	AAAAAAAAAAAAAAAAAAAAAAAA
+	</div>
+	<div id="b">BBBBBBBBBBBBBBBBBB
+	</div>
+	<div id="c">
+	CCCCCCCCCCCCCCCCCCCCC
+	</div>
+	<hr />
+	<div id="uull">
+	<ul>
+		<li><a href="#">sdfsd</a></li>
+		<li><a href="#">sdfsd</a></li>
+		<li><a href="#">sdfsd</a></li>
+	</ul>
+	</div>
+	<div id="table">
+		<table>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td>0</td>
+			</tr>
+		</table>
+	</div>
+	<div id="bdimg">
+		边框图像
+	</div>
+	<div id="columns">
+		<div id="div1">
+			<img src="images/icons/checkbox.gif" />
+			<p>keygen 元素是密钥对生成器（key-pair generator）。
+			当提交表单时，会生成两个键，一个是私钥，一个公钥。
+			私钥（private key）存储于客户端，公钥（public key）
+			则被发送到服务器。公钥可用于之后验证用户的客户端证书
+			（client certificate）。
+			</p><p>表示一个缩写形式，比如 "Inc."、"etc."。通过对
+			缩写词语进行标记，您就能够为浏览器、拼写检查程序、翻
+			译系统以及搜索引擎分度器提供有用的信息。
+			根据这个信息改变对这些文本的显示方式，或者用其他文本代替。
+			</p>
+		</div>
+		<div id="div2">
+			<h4>多栏布局column-count: 2;</h4>
+		</div>
+		<div id="container">
+			<div id="left-sidebar">
+				<h4>左侧边栏</h4>
+				<ul>
+				<li><a>dsfsd</a></li>
+				<li><a>dsfsd</a></li>
+				<li><a>dsfsd</a></li>
+				<li><a>dsfsd</a></li>
+				</ul>
+			</div>
+			<div id="contents">
+				<h3><small>内容</small></h3>
+				<p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;得到我们希望的效果。
+				不幸的是，下一个元素会受到这个浮动
+				元素的影响。为了解决这个问题，有些人选择对布局中的所有
+				东西进行浮动，然后使用适当的有意义的元素（常常是站点的页脚）
+				对这些浮动进行清理。这有助于减少或消除不必要的标记
+				</p>
+			</div>
+			<div id="right-sidebar">
+				<h4>右侧边栏</h4>
+				<ul>
+				<li><a>dsfsd</a></li>
+				<li><a>dsfsd</a></li>
+				<li><a>dsfsd</a></li>
+				<li><a>dsfsd</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="clc">
+		<div id="opty">
+			<header>
+			边框透明度 滤镜
+			rgb(0,255,105,0.15)
+			</header>
+			<div id="conts">
+			<p>sdfsfsfsgdsg
+			dfgdgdgdfgdfgd
+			dfgdfgdfgdfgdfgd
+			dfgdfgdfgdfgdfgdfgdfgdf
+			dfgdfgdfgdfgd
+			</p>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+  <script type="text/javascript" src="/javascripts/jquery-1.11.min.js"></script>
+	<script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+  </body>
+</html>

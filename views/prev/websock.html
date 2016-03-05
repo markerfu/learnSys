@@ -1,0 +1,70 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+    <title>web sockets 通信</title>  
+    <script type='text/javascript'>
+	var defaultTitle = "Portal[http://localhost:3000/test]"
+	var notificationTimer = null;
+	
+	var trustedOrigin = "http://localhost:8080";
+	
+	function messageHandler(e){
+		if(e.origin == trustedOrigin){
+			stopBlinking();
+			blinkTitle(e.data,defaultTitle);
+		}else{
+			//忽略其他源的消息
+		}		
+	}
+	function blinkTitle(m1,m2){
+		document.title = m1;
+		notificationTimer = setTimeout(blinkTitle,1000,m2,m1);
+	}
+	//=========================================================
+	function loadDemo(){
+		document.getElementById("sendButton").addEventListener("click",sendStatus,true);
+		document.getElementById("stopButton").addEventListener("click",stopBlinking,true);
+		sendStatus();
+	}
+	function sendStatus(){
+		var statusText = document.getElementById("statusText").value();
+		document.getElementById("widget").contentWindow.postMessage(statusText,trustedOrigin);
+	}
+	function stopBlinking(){
+		if(notificationTimer != null){
+			clearTimeout(notificationTimer);
+		}
+		//
+		document.title = defaultTitle;
+	}
+	window.addEventListener("load",loadDemo,true);
+	window.addEventListener("message",messageHandler,false);
+    </script>
+	<style type='text/css'>
+		iframe {
+			width: 500px;
+			height: 200px;
+		}
+	</style>
+  </head>
+<body>
+<h2 id="cc">跨域通信示例</h2>
+	<p><b>Origin</b>:http://localhost:8080:webj/bs/ch2.html</p>
+	Status:<input type="text" id="statusText" value="Online" />
+	<button type="button" id="sendButton">Change Status</button>
+	<p>
+	this uses postMessage to send a status update to the widget iframe in websocket page
+	</p>
+	<iframe id="widget" src="http://localhost:8080/webj/bs/ch2.html"></iframe>
+	<p>
+		<button type="button" id="stopButton">Stop Blinking</button>
+	</p>
+ </body>
+</html>

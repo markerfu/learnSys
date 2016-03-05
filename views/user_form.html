@@ -1,0 +1,32 @@
+
+<form method="post" action="/" id="userform">
+	<label for="user_id"></label>
+	<div id="formbody">
+		<input type="hidden" id="user_id" name="user_id" />
+		<label for="username">姓名:</label>
+		<input type="text" id="username" name="username" placeholder="请输入姓名" />
+		<label for="usersex">性别:</label>
+		<input type="text" id="usersex" name="usersex" autocomplete="on" placeholder="请输入性别" list="usex" />
+		<datalist id="usex">
+			<option checked="checked">男</option>
+			<option>女</option>
+		</datalist>
+		<label for="usernum">学号:</label>
+		<input type="text" id="usernum" pattern="[0-9]{4}" autocomplete="off" name="usernum" placeholder="请输入学号" />
+		<label for="userclass">年级:</label>
+		<input type="text" id="userclass" name="userclass" placeholder="请输入年级" list="uclass" />
+		<datalist id="uclass" style="display:none;">
+			<option>一年级</option>
+			<option>二年级</option>
+			<option>三年级</option>
+			<option>四年级</option>
+		</datalist>
+		</div>
+	<div id="formbtns">
+		<input type="reset" id="reset" value="重  置" />
+		<input type="submit" id="submit" value="保  存" />
+		<input type="button" id="searchuser" value="查  询" />
+		<input type="button" id="edituser" value="编  辑" />
+		<input type="button" id="deleteuser" value="删  除" />
+	</div>
+</form>

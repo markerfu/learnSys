@@ -1,0 +1,125 @@
+<% include header.html %>
+
+<div class="navbar navbar-inverse" role="navbar" id="navbar">
+	<div class="container">
+		<div class="navbar-header">
+			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class="sr-only">Toggle</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<div class="navbar-brand">Admin</div>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="#">首页</a></li>
+				<li><a href="#">设置</a></li>
+				<li><a href="dd">退出</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="container" id="mainbody">
+	<div class="col-sm-2" id="sidebar" role="navtext">
+		<div class="listgroup" id="userclub">
+			<div class="tab">用户管理</div>	
+			<div class="classInf">
+				<a style="background-color:#98cf7a" title="一年级" value="一年级"> 一年级 </a>
+				<a title="二年级" value="二年级"> 二年级 </a>
+				<a title="三年级" value="三年级"> 三年级 </a>
+			</div>
+		</div>
+		<div class="listgroup" id="scoreclub">
+			<div class="tab">考试管理</div>	
+			<div class="classInf">
+				<a href="#" title="一年级"> 一年级 </a>
+				<a href="#" title="二年级"> 二年级 </a>
+				<a href="#" title="三年级"> 三年级 </a>
+			</div>
+		</div>
+		<div class="listgroup" id="jdugeclub">
+			<div class="tab">评论管理</div>	
+			<div class="classInf">
+				<a href="#" title="一年级"> 一年级 </a>
+				<a href="#" title="二年级"> 二年级 </a>
+				<a href="#" title="三年级"> 三年级 </a>
+			</div>
+		</div>
+	</div>
+	<div  class="col-xs-12 col-sm-10" id="middlebar" role="midtext">			
+		<div class="navlead"><strong><h3>学生信息管理系统</h3></strong></div>
+		<div><img src="/images/imgad.jpg" style="width: 100%;height: 80px;" /></div>
+		<div id="navlead">
+			<div class="col-sm-3 col-md-2" style="margin-top: 30px;"><cite><cite></div>
+			<div class="btn btn-default col-sm-1 btn-sm pull-right" id="editform">新建</div>			
+						
+			<div class="col-xs-12">
+			<hr />
+			<div id="showUserInf">
+				
+			</div>
+			</div>
+		</div>
+		<div id="navform">
+			<form class="form-horizontal" role="form" method="POST" action="#">
+				<div class="form-group">
+					<label for="username" class="col-xs-4 col-sm-3 col-md-4 control-label">姓名:</label>
+					<div class="col-xs-8 col-sm-7 col-md-5">
+						<input type="text" required="required" class="form-control" id="username" name="username" placeholder="请输入用户名" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="usernumber" class="col-xs-4 col-sm-3 col-md-4 control-label">学号:</label>
+					<div class="col-xs-8 col-sm-7 col-md-5">
+						<input type="text" required="required" pattern="[0-9]{4}" class="form-control" id="usernumber" name="usernumber" placeholder="请输入四位有效数字" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="userclass" class="col-xs-4 col-sm-3 col-md-4 control-label">年级:</label>
+					<div class="col-xs-8 col-sm-7 col-md-5">
+						<input type="text" required="required" class="form-control" id="userclass" name="userclass" placeholder="请输入年级" list="uclass" />
+							<datalist id="uclass" style="display: none;">
+								<option>一年级</option>
+								<option>二年级</option>
+								<option>三年级</option>
+							</datalist>
+						<!--
+						<select class="form-control" id="userclass" name="userclass">
+							<option>一年级</option>
+							<option>二年级</option>
+							<option>三年级</option>
+						</select>
+						-->
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="usersex" class="col-xs-4 col-sm-3 col-md-4 control-label">性别:</label>
+					<div class="col-xs-8 col-sm-7 col-md-5">
+					<input type="text" required="required" list="usex" class="form-control" id="usernsex" name="usersex" placeholder="请输入性别" />
+						<datalist id="usex" style="display: none;">
+							<option value="male">男</option>
+							<option value="female">女</option>
+						</datalist>
+					<!--
+					<select  class="form-control" id="usersex" name="usersex">
+						<option>男</option>
+						<option>女</option>
+					</select>
+					-->
+					</div>
+				</div>
+				<div class="form-group" id="subform">
+					<div class="col-xs-1 col-xs-push-4 col-sm-push-4 col-md-push-5">
+						<button type="submit" class="btn btn-default btn-md">提交</button>	
+					</div>
+					<div class="col-xs-1 col-xs-push-6 col-sm-push-5 col-md-push-6">
+						<button type="reset" class="btn btn-default btn-md">重置</button>	
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<% include footer.html %>

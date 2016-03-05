@@ -1,0 +1,84 @@
+
+#scoreform {
+	background-color: #95c0db;
+	border: 1px solid #fff;
+	padding: 25px 5px 5px;
+	font-size:16px;
+	font-family: "微软雅黑";
+}
+#scoreformbtns {
+	padding: 24px 5px 0;	
+	margin: 0;
+}
+#scoreformbtns input {
+	width: 50px;
+	height: 23px;
+	padding:0;
+	margin: 0 10px;
+	font-size: 14px;
+	color: #414141;
+	line-height: 20px;
+	border: 1px solid skyblue;
+	border-radius: 5px;
+}
+#scoreformbtns input:hover {
+	box-shadow: 0 0 10px #1574f4;
+	background-color: #4679d7;
+	color: #fff;
+}
+#scorestem , #submitscore {
+	display: none;
+}
+
+#scoregridtable {
+	width: 100%;
+	text-align: center;
+}
+.scoregridtable {
+	width: 100%;
+	text-align: center;
+}
+tbody#scoregridtbody {
+
+}
+.score_id {
+	display: none;
+}
+.score_num:hover {
+	cursor: pointer;
+}
+#scoregridthead {
+	border: 1px solid skyblue;	
+	font-size: 1em;
+	height: 2em;
+	line-height : 2em;
+	color: red;
+	background-color: yellow;
+}
+.scoregridthead {
+	border: 1px solid skyblue;	
+	font-size: 1em;
+	height: 2em;
+	line-height : 2em;
+	color: red;
+	background-color: yellow;
+}
+#scoregridthead th {
+	text-align: center;
+}
+td.score_scoreNum {
+	border-radius: 10px;
+	background-color: #fff;
+	font-size: 15px;
+	color: #457a58;
+}
+.score_num:hover {
+	cursor: help;
+}
+
+
+
+
+
+
+

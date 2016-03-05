@@ -1,0 +1,264 @@
+body {
+	font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,STHeiti,"Microsoft Yahei",sans-serif;
+	font-size: 1.5em;
+	margin: 0;
+	padding: 0;
+}
+article, aside, dialog, figure, fppter, header, legend, nav, section {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+#header {
+	background: url(/images/header_bg.jpg);
+}
+#headertop1 {
+	display: -moz-box;
+	width: 100%;
+	height: 60px;
+	-moz-box-pack: center;
+}
+#headertitle {
+	width: 100%; 
+	color: red;
+	letter-spacing: 1.3em;
+}
+#headertitle h2 {
+	text-shadow: 2px 2px 2px #fff;
+}
+#headertop2 {
+	display: -moz-box;
+	width: 100%;
+	height: 50px;
+}
+#top2left {
+	
+}
+#top2img {
+	width: 200px;
+	-moz-box-ordinal-group: 2;
+}
+#top2img img:hover {
+	box-shadow: 0 0 4px #edf2ea;
+}
+#top2left {
+	-moz-box-ordinal-group: 1;
+	-moz-box-flex: 1;
+}
+#top2img img {
+	border-radius: 7px;
+	margin: 0 20px 10px 0;
+	height: 40px;
+	width: 40px;
+}
+#maincontents {
+	display: -moz-box;
+	width: 100%;
+}
+nav h4 {
+	text-shadow: 2px 2px 1px #fff;
+	padding: 16px;
+	margin:0;
+	font-size: 1.2em;
+	font-weight: 800;
+	background-color: #84acea;
+	text-align: center;
+	letter-spacing: 0.8em;
+	color: #1a65b0;
+	background-color: rgba(0,255,100,0.2);
+	border: 5px solid #8ebee6;
+	border-radius: 10px/117px;
+}
+nav h5 {	
+	background-color: #8ebee6;	
+	padding:11px;
+	margin: 0;
+	font-size: 1.1em;
+	text-align: center;
+	color: yellow;
+	letter-spacing: 0.3em;
+}
+nav>ul {
+	border: 1px solid #cdcdcd;
+	padding: 0;
+}
+nav li {
+	list-style: none;
+}
+li ul {	
+	padding: 0 5px 5px 5px;
+	border: 1px solid none;
+}
+nav a li {
+	text-align: center;
+	letter-spacing: 0.4em;
+	padding: 7px 0;
+	color: #8b8b8b;
+	font-size: 1em;
+	border-bottom: 1px solid #cdcdcd;
+}
+nav a li:hover {
+	color: #5d5d5d;
+	font-weight: bold;
+	letter-spacing: 0.8em;
+	box-shadow: 1px 1px 3px skyblue;
+}
+
+#aside {
+	-moz-box-ordinal-group: 1;
+	border: 1px solid #cdcdcd;
+	width: 220px;
+	height: 720px;
+	padding: 0 2px;
+	background-color: ;
+}
+#aside a {
+	text-decoration: blink;
+}
+
+#content {
+	-moz-box-ordinal-group: 2;
+	-moz-box-flex: 1;
+	background-color: #f2f2f2;
+}
+#message {	
+	padding: 5px 0 0 15px;
+	margin-top: -4px;
+	width: 100%;
+	height: 35px;
+	font-size: 16px;
+	display: none;
+	font-family: "微软雅黑";
+	letter-spacing: 5px;
+	overflow: auto;
+	border-radius: 0;
+}	
+#nav_bars {
+	padding: 4px 0 3px 0;
+	width: 100%;
+	height: 35px;
+	font-family: "方正舒体";
+	background-color: skyblue;
+	overflow: auto;
+	border: 1px solid #f0f0f0;
+	box-shadow: 0 0 2px #448ee1;	
+}
+#nav_bars li {
+	display: inline-block;
+	float: left;
+	height: 23px;
+	line-height: 23px;
+	margin: 3px 3px 0;
+	color: #8c8c8c;
+	text-align: center;		
+	border-radius: 7px;	
+	list-style: none;
+	overflow: hidden;	
+}
+#nav_bars .navbar_prev, #nav_bars .navbar_next {
+	border-radius: 0;
+	border-right: 1px solid #82c1e3;
+	text-shadow: 1px 0 2px #000;
+	width: 30px;
+	padding: 0 10px 0 0;
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	display: none;
+}
+#nav_bars .navbar_next {
+	float: right;
+	border-right: 0;
+	padding: 0 0 0 10px; 
+	text-shadow: -1px 0 2px #000;
+	border-left: 1px solid #82c1e3;
+}
+#nav_bars .navbar_next:hover, #nav_bars .navbar_prev:hover {
+	cursor: pointer;
+	text-shadow: 0 0 5px #fff;
+}
+#navbar {
+	margin: 0;
+	padding: 0;
+}
+#navbar li {
+	margin-top: 0;
+	margin-right: 15px;
+		
+	border: 1px solid #448ee1;
+	box-shadow: 0 0 1px #fff;
+	background-color: #cae4f9;
+	display: block;
+}
+#navbar b {
+	display: inline-block;
+	margin-top: -2px;
+	overflow: hidden;
+}
+#navbar li:hover {
+	cursor: pointer;
+	color: #575757;
+	text-shadow: 1px 0 1px #000;
+	box-shadow: 0 0 6px #4393e2;
+}
+#navbar img {
+	padding: 2px 4px;	
+	float: right;
+	border-left: 1px dashed #bbb;
+}
+#navbar img:hover {
+	box-shadow: 0 0 5px #fb2434;
+	background-color: #fff;
+	border-radius: 6px;
+}
+#formshow {	
+	
+}
+#gridshow {
+	height : 500px;
+	overflow: auto;
+}
+footer {
+	width: 100%;
+	height: 55px;
+	background-color: grey;
+}
+re_footer {
+	position: absolute;
+	top: 830px;
+	width: 100%;
+	height: 55px;
+	background-color: grey;
+}
+#deleteMsg {
+	position: fixed;
+	top: 0;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	display: none;
+	padding-top: 100px;
+	color: #000;
+	text-align: center;
+}
+#del_alert {
+	width: 200px;
+	height: 100px;
+	border: 1px solid red;
+	background-color: skyblue;
+	margin: 15% auto;
+}
+#del_alert input {
+	width: 50px;
+}
+#pager {
+	display : ;
+}
+#page_prev, #page_next {
+	visibility : hidden;
+}
+
+#pagination {
+	display: none;
+	margin-left: 60%;
+}

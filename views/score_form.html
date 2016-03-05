@@ -1,0 +1,55 @@
+<!--
+<form method="post" action="/" id="scoreform">
+	<label for="scorestem">学 期:</label>
+	<input type="text" id="scorestem" required="required" name="scorestem" placeholder="请输入单号" />
+	<label for="scoreclass">年 级:</label>
+	<input type="text" id="scoreclass" required="required" name="scoreclass" placeholder="请输入年级" />
+	<div id="formbtns">		
+		<input type="button" id="createscore" value="查  看" />
+		<input type="button" id="editscore" value="创  建" />
+		<input type="submit" id="submit" value="保  存" />
+		<input type="reset" id="reset" value="重  置" />
+	</div>
+</form>
+-->
+
+<form method="post" action="/" id="scoreform" role="form">		
+	<div id="scoreformbody">
+		<div class="col-sm-5 col-md-5 col-lg-4">
+			<label  id="scorelabel" for="scorestem">查 询 单 号:</label>
+			<input type="text" id="scorestem" required="required" name="scorestem" placeholder="请输入单号" />		
+			<select type="select" id="scorestemlist" name="scorestemlist" style="width:170px;">	
+				
+			</select>			
+			<!--
+			<input type="text" id="scorestemlist" name="scorestemlist" placeholder="请选择单号" list="scorelist" />
+			<datalist id="scorelist" style="display:none;">			
+			</datalist>
+			-->
+		</div>
+		<div class="col-sm-5 col-md-5 col-lg-4">
+			<label for="scoreclass">年 级:</label>
+			<input type="text" id="scoreclass" required="required" name="scoreclass" placeholder="请输入年级" list="scoreclasslist" style="padding:1px 0;"/>
+			<datalist id="scoreclasslist" style="display:none;">
+				<option>一年级</option>
+				<option>二年级</option>
+				<option>三年级</option>
+				<option>四年级</option>
+			</datalist>
+		</div>
+		<div id="grid_info">
+			总人数：<span style="color:red;font-size:20px;"><strong><i>23</i></strong></span>
+			平均分：<span style="color:red;font-size:20px;"><strong><i>56</i></strong></span>
+		</div>
+	</div>
+	<div id="scoreformbtns">		
+		<input type="button" id="checkscore" value="查  看" />
+		<input type="button" id="createscore" value="创  建" />		
+		<input type="reset" id="resetscore" value="重  置" />
+		<input type="submit" id="submitscore" value="保  存" />		
+	</div>
+	
+</form>
+      
+
+
